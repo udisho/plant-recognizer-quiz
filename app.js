@@ -3,7 +3,7 @@ const allQuestions = [
     {
         id: 1,
         name: 'גדילן',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/6/67/Scolymus_maculatus.jpg',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/3/34/Scolymus_maculatus_kz04.jpg',
         options: ['גדילן', 'חרדל', 'כובע הנזיר', 'חובזה'],
         correctIndex: 0,
         explanation: 'הגדילן הוא צמח קוצני עם פרחים צהובים. העלים הצעירים נאכלים לאחר הסרת הקוצים ובישול.',
@@ -39,7 +39,7 @@ const allQuestions = [
     {
         id: 5,
         name: 'תאנה',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/2/2e/Ficus_carica_L%2C_1771.jpg',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/b/be/Ripe_fig_fruit_on_tree_%28Ficus_Carica%29_in_Southern_France.JPG',
         options: ['שקד', 'חרדל', 'תאנה', 'גדילן'],
         correctIndex: 2,
         explanation: 'התאנה היא אחד משבעת המינים שנשתבחה בהם ארץ ישראל. הפרי מתוק וטעים ישירות מהעץ.',
@@ -57,7 +57,7 @@ const allQuestions = [
     {
         id: 7,
         name: 'צנובר (אורן)',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Pinus_pinea_Wellington_Botanic_Gardens.jpg',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/6/66/Pinus_halepensis_Judea.jpg',
         options: ['שקד', 'תאנה', 'צנובר (אורן)', 'אספרג החורש'],
         correctIndex: 2,
         explanation: 'אורן הצנובר מפיק את גרגירי הצנובר הטעימים. בישראל ניתן למצוא אותו ביערות שניטעו בעיקר בצפון.',
@@ -131,6 +131,12 @@ function startQuiz() {
         const shuffledOptions = [...q.options].sort(() => Math.random() - 0.5);
         q._shuffledOptions = shuffledOptions;
         q._shuffledCorrectIndex = shuffledOptions.indexOf(correctAnswer);
+    });
+
+    // Preload all images
+    currentQuestions.forEach(q => {
+        const img = new Image();
+        img.src = q.image;
     });
 
     document.getElementById('total-q').textContent = QUESTIONS_PER_QUIZ;
