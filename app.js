@@ -3,7 +3,7 @@ const allQuestions = [
     {
         id: 1,
         name: 'גדילן',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Scolymus_maculatus_kz01.jpg/800px-Scolymus_maculatus_kz01.jpg',
+        image: 'images/gadilan.jpg',
         options: ['גדילן', 'חרדל', 'כובע הנזיר', 'חובזה'],
         correctIndex: 0,
         explanation: 'הגדילן הוא צמח קוצני עם פרחים צהובים. העלים הצעירים נאכלים לאחר הסרת הקוצים ובישול.',
@@ -12,7 +12,7 @@ const allQuestions = [
     {
         id: 2,
         name: 'חרדל',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Brassicaceae_-_Sinapis_arvensis_%283%29.JPG/800px-Brassicaceae_-_Sinapis_arvensis_%283%29.JPG',
+        image: 'images/hardal.jpg',
         options: ['תורמוס', 'חרדל', 'גדילן', 'סרפד'],
         correctIndex: 1,
         explanation: 'החרדל הוא צמח בר נפוץ בישראל עם פרחים צהובים. העלים והזרעים שימשו כתבלין כבר מימי קדם.',
@@ -21,7 +21,7 @@ const allQuestions = [
     {
         id: 3,
         name: 'שום משולש',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Allium_triquetrum_%28flowers%29.jpg/800px-Allium_triquetrum_%28flowers%29.jpg',
+        image: 'images/shum.jpg',
         options: ['שום משולש', 'סרפד', 'אספרג החורש', 'חובזה'],
         correctIndex: 0,
         explanation: 'השום המשולש מזוהה בקלות בזכות הגבעול המשולש שלו. כל חלקי הצמח אכילים עם טעם שום עדין.',
@@ -30,7 +30,7 @@ const allQuestions = [
     {
         id: 4,
         name: 'שקד',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Almond_blossom02_aug_2007.jpg/800px-Almond_blossom02_aug_2007.jpg',
+        image: 'images/shaked.jpg',
         options: ['תאנה', 'שקד', 'אורן', 'תורמוס'],
         correctIndex: 1,
         explanation: 'השקד הוא מהעצים הראשונים שפורחים בישראל, כבר בינואר. הפרחים הוורודים-לבנים שלו מבשרים את בוא האביב.',
@@ -39,7 +39,7 @@ const allQuestions = [
     {
         id: 5,
         name: 'תאנה',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Ripe_fig_fruit_on_tree_%28Ficus_Carica%29_in_Southern_France.JPG/800px-Ripe_fig_fruit_on_tree_%28Ficus_Carica%29_in_Southern_France.JPG',
+        image: 'images/teena.jpg',
         options: ['שקד', 'חרדל', 'תאנה', 'גדילן'],
         correctIndex: 2,
         explanation: 'התאנה היא אחד משבעת המינים שנשתבחה בהם ארץ ישראל. הפרי מתוק וטעים ישירות מהעץ.',
@@ -48,7 +48,7 @@ const allQuestions = [
     {
         id: 6,
         name: 'אספרג החורש',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Asparagus_acutifolius_kz1.jpg/800px-Asparagus_acutifolius_kz1.jpg',
+        image: 'images/asparagus.jpg',
         options: ['סרפד', 'שום משולש', 'אספרג החורש', 'כובע הנזיר'],
         correctIndex: 2,
         explanation: 'אספרג החורש גדל בר בחורשים בישראל. הנבטים הצעירים נאכלים בדיוק כמו אספרגוס מתורבת.',
@@ -57,7 +57,7 @@ const allQuestions = [
     {
         id: 7,
         name: 'צנובר (אורן)',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Pine_cone_with_nuts.jpg/800px-Pine_cone_with_nuts.jpg',
+        image: 'images/pine.jpg',
         options: ['שקד', 'תאנה', 'צנובר (אורן)', 'אספרג החורש'],
         correctIndex: 2,
         explanation: 'אורן הצנובר מפיק את גרגירי הצנובר הטעימים. בישראל ניתן למצוא אותו ביערות שניטעו בעיקר בצפון.',
@@ -66,7 +66,7 @@ const allQuestions = [
     {
         id: 8,
         name: 'חובזה',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/MALVA_SYLVESTRIS_-_TOR%C3%80_-_IB-666_%28Malva_major%29.JPG/800px-MALVA_SYLVESTRIS_-_TOR%C3%80_-_IB-666_%28Malva_major%29.JPG',
+        image: 'images/hovza.jpg',
         options: ['חובזה', 'גדילן', 'תורמוס', 'חרדל'],
         correctIndex: 0,
         explanation: 'החובזה היא מהצמחים הנפוצים ביותר לליקוט בישראל. העלים נאכלים מבושלים ויש להם טעם עדין.',
@@ -75,7 +75,7 @@ const allQuestions = [
     {
         id: 9,
         name: 'סרפד',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Sirpad01.jpg/800px-Sirpad01.jpg',
+        image: 'images/sarpad.jpg',
         options: ['שום משולש', 'חובזה', 'סרפד', 'אספרג החורש'],
         correctIndex: 2,
         explanation: 'הסרפד צורב במגע אבל לאחר בישול הוא אכיל וטעים מאוד! עשיר בברזל וויטמינים.',
@@ -84,7 +84,7 @@ const allQuestions = [
     {
         id: 10,
         name: 'כובע הנזיר',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Arisarum_vulgare_%28trebol-a%29.jpg/800px-Arisarum_vulgare_%28trebol-a%29.jpg',
+        image: 'images/kova.jpg',
         options: ['תורמוס', 'סרפד', 'חרדל', 'כובע הנזיר'],
         correctIndex: 3,
         explanation: 'כובע הנזיר (לופית מצויה) נקרא כך בזכות צורת העטיף שלו שמזכירה כובע נזיר. נאכל לאחר בישול.',
@@ -93,7 +93,7 @@ const allQuestions = [
     {
         id: 11,
         name: 'תורמוס',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Lupinus-TAU-Wiki-Zachi-Evenor-2014.jpg/800px-Lupinus-TAU-Wiki-Zachi-Evenor-2014.jpg',
+        image: 'images/turmus.jpg',
         options: ['חרדל', 'גדילן', 'שקד', 'תורמוס'],
         correctIndex: 3,
         explanation: 'התורמוס הארצישראלי פורח בכחול-סגול ונפוץ מאוד בחורף. הזרעים נאכלים לאחר שרייה ממושכת במים.',
