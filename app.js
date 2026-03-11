@@ -336,13 +336,7 @@ function getResultMessage(score) {
 }
 
 function getGalMessage(score) {
-    if (score <= 30) {
-        return `היי! עשיתי את חידון צמחי הבר וקיבלתי ${score} מתוך 100 😅 אני צריך/ה שיעור פרטי בליקוט... יש לך מקום?`;
-    } else if (score <= 60) {
-        return `היי! עשיתי את חידון צמחי הבר וקיבלתי ${score} מתוך 100 🌿 אני רוצה ללמוד עוד! מתי יש סיור ליקוט?`;
-    } else {
-        return `היי! עשיתי את חידון צמחי הבר וקיבלתי ${score} מתוך 100 💪 אני כבר מוכן/ה לסיור ליקוט מתקדם!`;
-    }
+    return `היי גל! עשיתי את חידון הליקוט שלך וקיבלתי ${score} מתוך 100 🌿 אשמח לשמוע על הטיולים שלך!`;
 }
 
 function animateScore(el, from, to, duration) {
