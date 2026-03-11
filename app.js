@@ -145,7 +145,7 @@ function startQuiz() {
     document.getElementById('live-score').textContent = '0';
     showScreen('question-screen');
     showQuestion();
-    track('quiz_start');
+    track('quiz_start_plants');
 }
 
 function showQuestion() {
@@ -205,7 +205,7 @@ function handleAnswer(selectedIndex, correctIndex, q) {
     if (isCorrect) correctCount++;
     score = Math.round((correctCount / QUESTIONS_PER_QUIZ) * 100);
 
-    track('question_answer', {
+    track('question_answer_plants', {
         question_id: q.id,
         plant_name: q.name,
         correct: isCorrect,
@@ -293,7 +293,7 @@ function showResults() {
         document.getElementById('challenge-text').textContent = 'תאתגרו את החברים ותראו מי באמת מכיר צמחים! 💪';
     }
 
-    track('quiz_complete', { score: score });
+    track('quiz_complete_plants', { score: score });
 
     // Dynamic WhatsApp message to Gal
     const galMsg = getGalMessage(score);
@@ -363,7 +363,7 @@ function shareWhatsApp() {
         shareMsg = `קיבלתי ${score} מתוך 100 בחידון זיהוי צמחי בר 🌿\nמי מעז להתמודד איתי?\n${url}`;
     }
     const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareMsg)}`;
-    track('share_whatsapp', { score: score });
+    track('share_whatsapp_plants', { score: score });
     window.open(whatsappUrl, '_blank');
 }
 
