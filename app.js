@@ -107,7 +107,7 @@ let currentIndex = 0;
 let score = 0;
 let correctCount = 0;
 let answered = false;
-const QUESTIONS_PER_QUIZ = plants.length;
+const QUESTIONS_PER_QUIZ = allQuestions.length;
 
 // ===== Analytics Helper =====
 function track(eventName, params = {}) {
