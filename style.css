@@ -236,10 +236,36 @@ body {
 }
 
 .live-timer {
-    font-size: 0.9rem;
-    color: var(--text-mid);
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 700;
     font-variant-numeric: tabular-nums;
+    background: var(--accent-dark);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    transition: background 0.5s ease;
+}
+
+.live-timer.timer-green {
+    background: var(--accent-dark);
+}
+
+.live-timer.timer-orange {
+    background: #E65100;
+}
+
+.live-timer.timer-red {
+    background: var(--wrong);
+}
+
+.live-timer .timer-icon {
+    display: inline-block;
+    animation: timerPulse 1s ease infinite;
+}
+
+@keyframes timerPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
 }
 
 .score-display {

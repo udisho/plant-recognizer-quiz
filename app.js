@@ -270,12 +270,18 @@ function startLiveTimer() {
     if (timerInterval) clearInterval(timerInterval);
     const el = document.getElementById('live-timer');
     el.style.display = 'block';
-    el.textContent = '0:00';
+    el.className = 'live-timer timer-green';
+    el.innerHTML = '<span class="timer-icon">&#9201;</span> 0:00';
     timerInterval = setInterval(() => {
         const secs = Math.round((Date.now() - quizStartTime) / 1000);
         const m = Math.floor(secs / 60);
         const s = secs % 60;
-        el.textContent = `${m}:${String(s).padStart(2, '0')}`;
+        el.innerHTML = `<span class="timer-icon">&#9201;</span> ${m}:${String(s).padStart(2, '0')}`;
+        if (secs >= 120) {
+            el.className = 'live-timer timer-red';
+        } else if (secs >= 60) {
+            el.className = 'live-timer timer-orange';
+        }
     }, 1000);
 }
 
