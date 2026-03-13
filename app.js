@@ -107,6 +107,8 @@ let currentIndex = 0;
 let score = 0;
 let correctCount = 0;
 let answered = false;
+let quizStartTime = 0;
+let quizElapsedSeconds = 0;
 const QUESTIONS_PER_QUIZ = allQuestions.length;
 
 // ===== Analytics Helper =====
@@ -140,6 +142,8 @@ function startQuiz() {
         const img = new Image();
         img.src = q.image;
     });
+
+    quizStartTime = Date.now();
 
     document.getElementById('total-q').textContent = QUESTIONS_PER_QUIZ;
     document.getElementById('live-score').textContent = '0';
@@ -260,9 +264,18 @@ function nextQuestion() {
 }
 
 // ===== Results =====
+function formatTime(totalSeconds) {
+    const mins = Math.floor(totalSeconds / 60);
+    const secs = totalSeconds % 60;
+    if (mins === 0) return `${secs} שניות`;
+    return `${mins}:${String(secs).padStart(2, '0')} דקות`;
+}
+
 function showResults() {
+    quizElapsedSeconds = Math.round((Date.now() - quizStartTime) / 1000);
     showScreen('results-screen');
     document.getElementById('progress-fill').style.width = '100%';
+    document.getElementById('time-result').textContent = formatTime(quizElapsedSeconds);
 
     // Animate score
     const scoreEl = document.getElementById('final-score');
@@ -336,7 +349,7 @@ function getResultMessage(score) {
 }
 
 function getGalMessage(score) {
-    return `היי גל! עשיתי את חידון הליקוט שלך וקיבלתי ${score} מתוך 100 🌿 אשמח לשמוע על הטיולים שלך!`;
+    return `היי גל! עשיתי את חידון הליקוט שלך וקיבלתי ${score} מתוך 100 תוך ${formatTime(quizElapsedSeconds)} 🌿 אשמח לשמוע על הטיולים שלך!`;
 }
 
 function animateScore(el, from, to, duration) {
@@ -354,13 +367,14 @@ function animateScore(el, from, to, duration) {
 // ===== Sharing =====
 function shareWhatsApp() {
     const url = window.location.href;
+    const timeStr = formatTime(quizElapsedSeconds);
     let shareMsg;
     if (score <= 40) {
-        shareMsg = `קיבלתי ${score} מתוך 100 בחידון זיהוי צמחי בר 🌿\nכמה צמחים אתה/את מזהה?\n${url}`;
+        shareMsg = `קיבלתי ${score} מתוך 100 בחידון זיהוי צמחי בר תוך ${timeStr} 🌿\nכמה צמחים אתה/את מזהה?\n${url}`;
     } else if (score <= 70) {
-        shareMsg = `קיבלתי ${score} מתוך 100 בחידון זיהוי צמחי בר 🌿\nלא רע, אבל יש עוד מה ללמוד!\nכמה אתה/את תקבל/י?\n${url}`;
+        shareMsg = `קיבלתי ${score} מתוך 100 בחידון זיהוי צמחי בר תוך ${timeStr} 🌿\nלא רע, אבל יש עוד מה ללמוד!\nכמה אתה/את תקבל/י?\n${url}`;
     } else {
-        shareMsg = `קיבלתי ${score} מתוך 100 בחידון זיהוי צמחי בר 🌿\nמי מעז להתמודד איתי?\n${url}`;
+        shareMsg = `קיבלתי ${score} מתוך 100 בחידון זיהוי צמחי בר תוך ${timeStr} 🌿\nמי מעז להתמודד איתי?\n${url}`;
     }
     const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareMsg)}`;
     track('share_whatsapp_plants', { score: score });
