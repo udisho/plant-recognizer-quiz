@@ -109,6 +109,7 @@ let correctCount = 0;
 let answered = false;
 let quizStartTime = 0;
 let quizElapsedSeconds = 0;
+let timerInterval = null;
 const QUESTIONS_PER_QUIZ = allQuestions.length;
 
 // ===== Analytics Helper =====
@@ -144,6 +145,7 @@ function startQuiz() {
     });
 
     quizStartTime = Date.now();
+    startLiveTimer();
 
     document.getElementById('total-q').textContent = QUESTIONS_PER_QUIZ;
     document.getElementById('live-score').textContent = '0';
@@ -264,6 +266,27 @@ function nextQuestion() {
 }
 
 // ===== Results =====
+function startLiveTimer() {
+    if (timerInterval) clearInterval(timerInterval);
+    const el = document.getElementById('live-timer');
+    el.style.display = 'block';
+    el.textContent = '0:00';
+    timerInterval = setInterval(() => {
+        const secs = Math.round((Date.now() - quizStartTime) / 1000);
+        const m = Math.floor(secs / 60);
+        const s = secs % 60;
+        el.textContent = `${m}:${String(s).padStart(2, '0')}`;
+    }, 1000);
+}
+
+function stopLiveTimer() {
+    if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+    }
+    document.getElementById('live-timer').style.display = 'none';
+}
+
 function formatTime(totalSeconds) {
     const mins = Math.floor(totalSeconds / 60);
     const secs = totalSeconds % 60;
@@ -273,6 +296,7 @@ function formatTime(totalSeconds) {
 
 function showResults() {
     quizElapsedSeconds = Math.round((Date.now() - quizStartTime) / 1000);
+    stopLiveTimer();
     showScreen('results-screen');
     document.getElementById('progress-fill').style.width = '100%';
     document.getElementById('time-result').textContent = formatTime(quizElapsedSeconds);

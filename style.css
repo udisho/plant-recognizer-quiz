@@ -235,6 +235,13 @@ body {
     font-weight: 500;
 }
 
+.live-timer {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
 .score-display {
     font-size: 0.9rem;
     color: var(--primary-dark);
