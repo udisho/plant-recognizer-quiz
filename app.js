@@ -114,7 +114,7 @@ const allQuestions = [
         image: 'images/ezov.jpg',
         options: ['קורנית', 'תיון דביק', 'אזוב', 'לשון הפר'],
         correctIndex: 2,
-        explanation: 'האזוב המצוי (זעתר) הוא צמח תבלין מרכזי במטבח הערבי והישראלי. גדל בהרים ובמדרונות סלעיים.',
+        explanation: 'האזוב המצוי הוא צמח תבלין מרכזי במטבח הערבי והישראלי. גדל בהרים ובמדרונות סלעיים.',
         link: 'https://he.wikipedia.org/wiki/%D7%90%D7%96%D7%95%D7%91_%D7%9E%D7%A6%D7%95%D7%99',
     },
     {
@@ -168,7 +168,7 @@ const allQuestions = [
         image: 'images/olesh.jpg',
         options: ['עולש', 'גדילן', 'רפכתן', 'צלף'],
         correctIndex: 0,
-        explanation: 'העולש (ציקוריה/עולש מצוי) הוא צמח בר נפוץ עם פרחים כחולים. העלים נאכלים חיים בסלט או מבושלים.',
+        explanation: 'העולש הוא צמח בר נפוץ עם פרחים כחולים. העלים נאכלים חיים בסלט או מבושלים.',
         link: 'https://he.wikipedia.org/wiki/%D7%A2%D7%95%D7%9C%D7%A9_%D7%A0%D7%A4%D7%95%D7%A5',
     },
     {
