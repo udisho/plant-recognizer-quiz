@@ -150,7 +150,7 @@ const allQuestions = [
         image: 'images/rafachtan.jpg',
         options: ['לשון הפר', 'שום משולש', 'רפכתן', 'אזוב'],
         correctIndex: 2,
-        explanation: 'הרפכתן (עירית) הוא צמח בצלי עם תפרחת גבוהה של פרחים לבנים. נפוץ מאוד בשדות ובמדרונות בחורף.',
+        explanation: 'הרפכתן הוא צמח בצלי עם תפרחת גבוהה של פרחים לבנים. נפוץ מאוד בשדות ובמדרונות בחורף.',
         link: 'https://he.wikipedia.org/wiki/%D7%A2%D7%99%D7%A8%D7%99%D7%AA',
     },
     {
