@@ -132,7 +132,7 @@ const allQuestions = [
         image: 'images/zalaf.jpg',
         options: ['עולש', 'דובדבן שרוע', 'צלף', 'חובזה'],
         correctIndex: 2,
-        explanation: 'הצלף הקוצני גדל על סלעים וחומות עתיקות. הפרחים הלבנים הגדולים שלו נפתחים בערב ונושרים בבוקר.',
+        explanation: 'הצלף הקוצני גדל על סלעים וחומות עתיקות. ניתן לכבוש את ניצני הפרחים ואת הפירות שלו.',
         link: 'https://he.wikipedia.org/wiki/%D7%A6%D7%9C%D7%A3_%D7%A7%D7%95%D7%A6%D7%A0%D7%99',
     },
     {
