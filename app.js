@@ -6,7 +6,7 @@ const allQuestions = [
         image: 'images/gadilan.jpg',
         options: ['גדילן', 'חרדל', 'כובע הנזיר', 'חובזה'],
         correctIndex: 0,
-        explanation: 'הגדילן הוא צמח קוצני עם פרחים צהובים. העלים הצעירים נאכלים לאחר הסרת הקוצים ובישול.',
+        explanation: 'הגדילן הוא צמח קוצני עם פרחים סגולים. העלים הצעירים נאכלים לאחר הסרת הקוצים ובישול.',
         link: 'https://he.wikipedia.org/wiki/%D7%92%D7%93%D7%99%D7%9C%D7%9F_%D7%9E%D7%A6%D7%95%D7%99',
     },
     {
